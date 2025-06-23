@@ -1,4 +1,4 @@
-// this is where our information will be monitored
+// this is where your information will be monitored letss gooo!
 let currentlySelectedPost = null; // this will store any post the user clicked on or chose 
 let allThePosts = []; // array to hold all  posts used
 let isStillLoading = false; // status flag to track whether a prosses loading is happening or not
