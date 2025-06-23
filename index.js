@@ -53,6 +53,7 @@ async function getAllPostsFromServer() {
 async function showTheFullPost(postId, event) {
     try {
         // grab the full post data from our server
+        //this was easy but tricky lol
         const serverResponse = await fetch(`http://localhost:3000/posts/${postId}`);
         const clickedPost = await serverResponse.json();
         currentlySelectedPost = clickedPost; // remember which one we're looking at
@@ -105,7 +106,7 @@ function makeNewPostFormWork() {
         };
         
         try {
-            // send it to the server
+            // now send it to the server yaayyy
             const serverResponse = await fetch('http://localhost:3000/posts', {
                 method: 'POST',
                 headers: {
@@ -115,10 +116,11 @@ function makeNewPostFormWork() {
             });
             
             if (serverResponse.ok) {
-                // wipe the form clean
+                // wipe the form clean 
                 newPostForm.reset();
                 
                 // refresh everything to show the new post
+                //I can see i made progress actually
                 getAllPostsFromServer();
                 
                 alert('Woohoo! New post created successfully!');
@@ -132,7 +134,7 @@ function makeNewPostFormWork() {
     });
 }
 
-// show the form where you can edit whatever post is currently selected
+// show the form where you can edit whatever post is currentlly selected
 function showEditForm() {
     if (!currentlySelectedPost) return; // go back if nothing is selected 
     
@@ -141,6 +143,7 @@ function showEditForm() {
     document.getElementById('edit-content').value = currentlySelectedPost.content;
     
     // make the edit form visible
+    //so that you can see what youre doing lol
     document.getElementById('edit-post-form').classList.remove('hide');
     
     // make the form do something when its being submitted
