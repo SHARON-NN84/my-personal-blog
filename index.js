@@ -25,7 +25,8 @@ async function getAllPostsFromServer() {
         
         // loop and make it clickable
     
-        for(let i = 0; i < allPosts.length; i++) {
+        allPosts.forEach(post => {
+
             const singlePost = allPosts[i];
             const postDiv = document.createElement('div');
             postDiv.className = 'blog-post';
@@ -191,7 +192,7 @@ function showEditForm() {
     };
 }
 
-// let the user cancel out of editing mode if they want 
+// let the user cancel out of editing mode if they want cause free will is a thing btw
 document.getElementById('cancel-edit-btn').addEventListener('click', function() {
     document.getElementById('edit-post-form').classList.add('hide');
 });
@@ -206,7 +207,7 @@ async function deleteThisPost(postId) {
     try {
         // tells the server to delete this post
         const serverResponse = await fetch(`http://localhost:3000/posts/${postId}`, {
-            method: 'DELETE'
+            method: 'DELETE' //well now you've gotten rid of it like completely 
         });
         
         if (serverResponse.ok) {
