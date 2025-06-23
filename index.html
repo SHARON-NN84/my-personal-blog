@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+    <h1>My Personal Blog</h1>
+    
+    <div class="main-container">
+
+        <div>
+            <h2>All Posts</h2>
+            <div id="post-list">
+                <!-- posts go here -->
+            </div>
+        </div>
+        
+        <!-- Post details section -->
+        <div>
+            <h2>Post Detail</h2>
+            <div id="post-detail">
+                <p style="color: #666666; font-style: inherit;">Click on a post to see details here...</p>
+            </div>
+            
+            <!-- edit form - starts hidden -->
+            <form id="edit-post-form" class="hide">
+                <h3>Edit This Post</h3>
+                <div class="input-group">
+                    <label for="edit-title">Post Title:</label>
+                    <input type="text" id="edit-title" name="title">
+                </div>
+                
+                <div class="input-group">
+                    <label for="edit-content">Post Content:</label>
+                    <textarea id="edit-content" name="content" rows="4"></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-blue">Save Changes</button>
+                    <button type="button" id="cancel-edit-btn" class="btn btn-gray">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- new post form -->
+    <div class="form-container">
+        <h2>Create New Post</h2>
+        <form id="new-post-form">
+            <div class="input-group">
+                <label for="post-title">Title:</label>
+                <input type="text" id="post-title" name="title" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="post-content">Content:</label>
+                <textarea id="post-content" name="content" rows="5" required></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="post-author">Author:</label>
+                <input type="text" id="post-author" name="author" required>
+            </div>
+            
+            <button type="submit" class="btn btn-blue">Add Post</button>
+        </form>
+    </div>
+</body>
+</html>
